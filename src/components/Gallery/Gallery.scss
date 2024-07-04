@@ -1,0 +1,124 @@
+@import "../../Constants.scss";
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    .gallery_1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+
+        iframe {
+            border: none;
+            height: 20rem;
+            width: 30rem;
+            border-radius: 5px;
+        }
+    }
+
+    .gallery_2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 60%;
+
+        .gallery_image {
+            height: 10.5rem;
+            width: 16.5rem;
+            background-color: $lightOrange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            transition: 0.5s;
+
+            img {
+                height: 10rem;
+                width: 16rem;
+                border-radius: 3px;
+            }
+
+            &:hover {
+                background-color: $orange;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (width<1550px) {
+    .gallery {
+        flex-direction: column;
+        gap: 5rem;
+
+        .gallery_1 {
+            width: 100%;
+        }
+
+        .gallery_2 {
+            width: 100%;
+        }
+    }
+}
+
+@media (width<615px) {
+    .gallery {
+        gap: 3rem;
+
+        .gallery_1 {
+
+            iframe {
+                height: 15rem;
+                width: 25rem;
+            }
+        }
+
+        .gallery_2 {
+            width: 100%;
+            gap: 0.4rem;
+
+            .gallery_image {
+                height: 8.2rem;
+                width: 12.2rem;
+
+                img {
+                    height: 8rem;
+                    width: 12rem;
+                }
+            }
+        }
+    }
+}
+
+@media (width<415px) {
+    .gallery {
+        gap: 3rem;
+
+        .gallery_1 {
+
+            iframe {
+                height: 14rem;
+                width: 90%;
+            }
+        }
+
+        .gallery_2 {
+
+            .gallery_image {
+                height: 8.2rem;
+                width: 10.2rem;
+
+                img {
+                    height: 8rem;
+                    width: 10rem;
+                }
+            }
+        }
+    }
+}

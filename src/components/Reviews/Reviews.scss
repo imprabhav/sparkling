@@ -1,0 +1,122 @@
+@import "../../Constants.scss";
+
+.review {
+    height: 20rem;
+    width: 36rem;
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    .review_slide {
+        height: 18rem;
+        width: 34rem;
+        background-color: $lightOrange;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3em;
+        border-radius: 8px;
+        margin: 0 auto;
+
+        #review_text {
+            color: $grey;
+            font-family: $heebo;
+            font-size: 1rem;
+            padding: 0 2rem;
+            cursor: default;    
+        }
+
+        .review_content {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding-left: 2rem;
+
+            .review_img {
+                height: 6.5rem;
+                width: 6.5rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: -3rem;
+                z-index: 101;
+
+                img {
+                    height: 6em;
+                    width: 6rem;
+                    border-radius: 50%;
+                    border: 1.5px solid $orange;
+                }
+            }
+
+            .review_text {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 6em;
+                width: 100%;
+                background-color: $white;
+                align-self: center;
+                padding-left: 5rem;
+
+                h3 {
+                    color: $green;
+                    font-size: 1.75rem;
+                    font-family: $lobster;
+                    font-weight: 700;
+                }
+
+                p {
+                    color: $grey;
+                    font-family: $heebo;
+                    font-size: 1rem;
+                }
+            }
+
+            svg {
+                fill: $orange;
+                height: 3.6rem;
+                width: 3.6rem;
+            }
+        }
+    }
+}
+
+@media (width<580px) {
+    .review {
+        width: 100%;
+
+        .review_slide {
+            width: 98%;
+        }
+    }
+}
+
+@media (width<450px) {
+    .review {
+
+        .review_slide {
+            width: 98%;
+            gap: 1rem;
+
+            #review_text {
+                font-size: 0.8rem;
+            }
+
+            .review_content {
+                .review_text {
+                    padding-left: 4rem;
+
+                    h3 {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@import "../../Constants.scss";
+
+@mixin facility-card($bg-color, $hover-bg-color, $text-color, $hover-text-color) {
+  background-color: $bg-color;
+  
+  h2 {
+    color: $text-color;
+  }
+
+  &:hover {
+    background-color: $hover-bg-color;
+
+    h2,
+    p {
+      color: $hover-text-color;
+    }
+  }
+}
+
+.facilities_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .facilities_section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 50rem;
+    padding: 2rem 0;
+
+    .facilities {
+      height: 15rem;
+      width: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem;
+      text-align: center;
+      border-radius: 54%;
+      transition: 0.5s;
+
+      h2 {
+        font-family: $lobster;
+        font-size: 1.75rem;
+      }
+
+      p {
+        color: $grey;
+        font-family: $heebo;
+        font-size: 1rem;
+      }
+
+      &:nth-child(1) {
+        @include facility-card(#fef1ee, #FE7C5D, #FE7C5D, #FFFFFF);
+      }
+
+      &:nth-child(2) {
+        @include facility-card(#fff8e6, #FFC107, #FFC107, #FFFFFF);
+      }
+
+      &:nth-child(3) {
+        @include facility-card(#e8f3ed, #198754, #198754, #FFFFFF);
+      }
+
+      &:nth-child(4) {
+        @include facility-card(#e6f9fd, #0DCAF0, #0DCAF0, #FFFFFF);
+      }
+    }
+  }
+}
+
+@media (width < 450px) {
+  .facilities_container {
+    .facilities_section {
+      .facilities {
+        height: 12rem;
+        width: 20rem;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

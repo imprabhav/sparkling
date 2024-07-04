@@ -1,0 +1,159 @@
+@import "../../Constants.scss";
+
+.activities {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 80rem;
+    padding: 2rem 0;
+    margin: 1rem auto;
+
+    .activity_card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s;
+        width: 25rem;
+
+        .activity_image {
+            height: 20rem;
+            width: 20rem;
+            border-radius: 50%;
+            background-color: $lightOrange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+
+            img {
+                height: 18rem;
+                width: 18rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        .activity_content {
+            display: flex;
+            flex-direction: column;
+            height: 15rem;
+            width: 100%;
+            background-color: $lightOrange;
+            margin-top: -3rem;
+            z-index: -1;
+            border-radius: 5px;
+
+            h2 {
+                margin-top: 4rem;
+                text-align: center;
+                color: $green;
+                font-size: 1.75rem;
+                font-family: $lobster;
+                font-weight: 700;
+            }
+
+            .activity_info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0 1rem;
+                margin-top: 3rem;
+
+                hr {
+                    border: none;
+                    height: 2px;
+                    width: 6rem;
+                }
+
+                h3 {
+                    font-family: $heebo;
+                    font-weight: 500;
+                    margin-top: 0.8rem;
+                }
+
+                p {
+                    color: $grey;
+                    font-family: $heebo;
+                    font-weight: 400;
+                    font-size: 0.9rem;
+                }
+
+                #activity_age {
+                    hr {
+                        background-color: $orange
+                    }
+
+                    h3 {
+                        color: $orange;
+                    }
+                }
+
+                #activity_time {
+                    hr {
+                        background-color: #198754
+                    }
+
+                    h3 {
+                        color: #198754;
+                    }
+                }
+
+                #activity_capacity {
+                    hr {
+                        background-color: #FFC107
+                    }
+
+                    h3 {
+                        color: #FFC107;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            transform: translateY(-3%);
+        }
+    }
+}
+
+@media (width<450px) {
+    .activities {
+
+        .activity_card {
+            width: 20rem;
+
+            .activity_content {
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                .activity_info {
+
+                    hr {
+                        width: 4rem;
+                    }
+
+                    h3 {
+                        font-size: 1rem;
+                    }
+
+                    p {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+            .activity_image {
+                height: 13rem;
+                width: 13rem;
+
+                img {
+                    height: 12rem;
+                    width: 12rem;
+                }
+            }
+        }
+    }
+}
